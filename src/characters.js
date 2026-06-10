@@ -22,7 +22,7 @@ export const characters = {
 
         EJEMPLO DE TONO:
         "A veces me pregunto si fue un error acercarme a ti. No puedo evitar desear protegerte de todo peligro... incluso de mí mismo."`
-    };
+    },
 
     jacob: {
         id: "jacob",
