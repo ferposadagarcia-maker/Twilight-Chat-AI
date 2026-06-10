@@ -22,27 +22,31 @@ function renderChat(){
     const app = document.getElementById('app');
 
     const cardsHTML = Object.values(characters).map(character => `   
-    <div class="character-card" style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; width: 220px; text-align: center; transition: transform 0.3s, border-color 0.3s;">
+    <div class="character-card">
+
+        <div class="card-image-container">
+            <img src="/assets/${character.id}.png" alt="${character.name}" class="card-image">
+            <div class="card-name-overlay">
+                <h2 class="font-serif">${character.name}</h2>
+            </div>
+        </div>
         
-        <img src="/assets/${character.id}.png" alt="${character.name}" style="width: 80px; height: 80px; border-radius: 50%; objet-fit: cover: margin-bottom: 1rem; border: 2px solid var(--accent-red9;"></img>
+        <div class="card-body">
+            <p class="card-role">${character.role}</p>
+            <p class="card-description">${character.description}</p>
         
-        <h2 class="font-serif" style="font-size: 1.4rem; margin-bottom: 0.5rem; color: var(---text-white);">${character.name}</h2>
-        <p style="font-size: 0.8rem; color: var(--accent-red); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem;">${character.name}</p>
-        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;
-        height: 60px; overflow: hidden; line-height: 1.4;">${character.description}</p>
-        
-        <button class="select-char-btn" data-id="${character.id}" style="background-color: transparent; border: 1px solid var(--accent-red); color: var(--text-white); padding: 0.5rem
-        1.rem; border-radius: 4px; cursor: pointer; width 100%; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; transition: background 0.3s;">Comenzar a chatear
-        </button>
-    </div>
+            <button class="select-char-btn" data-id="${character.id}"> Comenzar a chatear</button>
+        </div>
+    </div>    
 `).join('');
 
     app.innerHTML = `
         <div class="view-container">
-            <h1 class="font-serif" style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem; letter-spacing: 1px;">Elige con quién chatear</h1>
-                 <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Selecciona al personaje con quién quieres pláticar:</p>
+            <h1 class="font-serif main-title">Elige con quién chatear</h1>
+                 <p class="main-subtitle">Selecciona al personaje con quién quieres pláticar:
+                 </p>
 
-                 <div class="characters-gallery" style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">${cardsHTML}
+                 <div class="characters-gallery">${cardsHTML}
             </div>
         </div>
     `;
@@ -63,36 +67,33 @@ function renderActiveChat(characterId) {
     if (!character) return;
 
     app.innerHTML = `
-        <div class="view-container" style="max-width: 600px; margin: 0 auto; width: 100%;">
+        <div class="chat-wrapper">
             
-            <header class="chat-header" style="display: flex; align-items: center; justify-content: space-between; background-color: var(--bg-secondary); padding: 1rem; border-radius: 8px 8px 0 0; border: 1px solid var(--border-color); border-bottom: none;">
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <img src="/assets/${character.id}.png" alt="${character.name}" style="width: 45px; height: 45px; border-radius: 50%; object-fit cover; border: 1px solid var(--accent-red);">
-                    
+            <header class="chat-header">
+                <div class="chat-header-info">
+                    <img src="/assets/${character.id}.png" alt="${character.name}" class="chat-header-avatar">
                     <div>
-                        <h2 class="font-serif" style="font-size: 1.2rem; margin: 0;">${character.name}</h2>
-                        <span style="font-size: 0.75rem; color: #4cd964; display: flex; align-items: center; gap: 0.3rem;">
-                            <span style="width: 8px; height: 8px; background-color: #4cd964; border-radius: 50%; display: inline-block;"></span>
+                        <h2 class="font-serif chat-header-name">${character.name}</h2>
+
+                        <span class="chat-status"></span>
                             En línea
                         </span>
                     </div>
                 </div>
-                <a href="/chat" data-link style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; border: 1px solid var(--border-color); padding: 0.3rem 0.6rem; border-radius: 4px;">
+                <a href="/chat" class="btn-volver" data-link>
                     Volver ←
                 </a>
             </header>
 
-            <section id="messages-area" style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); height: 350px; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 1rem;">
-                <div style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: auto; margin-bottom: auto;">
+            <section id="messages-area" class="messages-container">
+                <div class="empty-chat-message">
                     Comienza tu conversación con ${character.name}.
                 </div>
             </section>
 
-            <div class="composer" style="display: flex; gap: 0.5rem; background-color: var(--bg-secondary); padding: 0.8rem; border-radius: 0 0 8px 8px; border: 1px solid var(--border-color); border-top: none;">
-                <textarea id="message-input" placeholder="Escribe un mensaje..." rows="1" style="flex: 1; background-color: var(--bg-primary); border: 1px solid var(--border-color); color: var(--text-white); padding: 0.6rem; border-radius: 4px; resize: none; font-family: inherit; font-size: 0.9rem; outline: none;" maxlength="400"></textarea>
-                <button id="send-btn" style="background-color: var(--accent-red); border: none; color: var(--text-white); padding: 0.6rem 1.2rem; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.3s;">
-                    Enviar
-                </button>
+            <div class="composer-container">
+                <textarea id="message-input" placeholder="Escribe un mensaje..." rows="1" maxlength="400"></textarea>
+                <button id="send-btn" aria-label="Enviar" title="Enviar">➤</button>
             </div>
         </div>
     `;
