@@ -1,28 +1,16 @@
 :root {
-  /* Modo Oscuro (Predeterminado - Estética Libro) */
-  --bg-primary: #000000;         /* Negro absoluto de las portadas */
-  --bg-secondary: #0d0d0f;       /* Gris casi negro para tarjetas/paneles */
-  --accent-red: #8b0000;         /* Rojo carmesí profundo (manzana/cinta) */
-  --accent-red-hover: #b30000;   /* Rojo más brillante para estados hover */
-  --text-white: #ffffff;         /* Blanco puro (ficha de ajedrez) */
-  --text-muted: #8a8a93;         /* Gris apagado para textos secundarios */
-  --border-color: #1a1a1f;       /* Líneas sutiles de separación */
-  --font-serif: "Georgia", "Times New Roman", serif; /* Fuente elegante */
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --bg-primary: #050505;
+  --bg-secondary: #0f0f12;
+  --bg-chat-area: #141418;
+
+  --accent-red: #8b0000;
+  --accent-red-trans: rgba(139, 0, 0, 0.25);
+  --text-white: #ffffff;
+  --text-muted: #8a8a9f;
+  --border-color: #21212b;
+  --font-typewriter: "Courier New", Courier, monospace;
   --transition-speed: 0.3s;
 }
-
-/* Variables para el Modo Claro (Inspirado en la cubierta de Amanecer/Sol de Medianoche) */
-[data-theme="light"] {
-  --bg-primary: #f5f5f7;
-  --bg-secondary: #ffffff;
-  --accent-red: #9e0000;
-  --accent-red-hover: #cd0000;
-  --text-white: #121212;
-  --text-muted: #5e5e6e;
-  --border-color: #e5e5ea;
-}
-
 
 * {
   margin: 0;
@@ -33,118 +21,322 @@
 body {
   background-color: var(--bg-primary);
   color: var(--text-white);
-  font-family: var(--font-sans);
+  font-family: var(--font-typewriter);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: background-color var(--transition-speed), color var(--transition-speed);
-  overflow-x: hidden;
+}
+.font-serif {
+  font-family: var(--font-typewriter);
+  font-weight: bold;
 }
 
-/* ==========================================================================
-   HEADER / NAVBAR (Diseño centrado, minimalista y elegante)
-   ========================================================================== */
+
 .navbar {
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
-  padding: 1.5rem 1rem;
-  display: flex;
-  flex-direction: column; /* Apilado en móviles */
-  align-items: center;
-  gap: 1.5rem;
-  width: 100%;
-}
-
-/* Logo de la aplicación */
-.navbar_brand .nav-link {
+  padding: 1.2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-decoration: none;
-  gap: 0.5rem;
+  gap: 1em;
 }
 
 .logo {
-  height: 250px; /* Ajusta según el tamaño de tu assets/logo.png */
+  height: 38px;
   width: auto;
-  filter: drop-shadow(0 0 4px var(--accent-red)); /* Brillo sutil rojo */
+  filter: drop-shadow(0 0 4px var(--accent-red));
 }
-
-.app-name {
-  font-family: var(--font-serif);
-  font-size: 1.6rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--text-white);
-  font-weight: 300;
-}
-
-/* Enlaces de navegación justo debajo */
 .navbar-links {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  width: 100%;
 }
 
-.navbar-links .nav-link {
-  font-family: var(--font-serif);
+.navbar_links .nav-link {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 0.5rem 0.8rem;
-  transition: color var(--transition-speed), border-color var(--transition-speed);
-  border-bottom: 2px solid transparent;
+  letter-spacing: 2px;
+  padding: 0.4rem 0.6rem;
+  transition: color 0.3s, border-color 0.3s;
+  border-bottom: 2px solid var(--accent-red);
 }
 
-/* Estado activo y hover */
-.navbar-links .nav-link:hover,
+.navbar-links .navbar-link:hover,
 .navbar-links .nav-link.active {
   color: var(--text-white);
   border-bottom: 2px solid var(--accent-red);
 }
 
-/* Botón de cambio de tema */
-.theme-toggle {
-  background: none;
-  border: 1px solid var(--border-color);
-  color: var(--text-white);
-  font-size: 1.2rem;
-  padding: 0.5rem 0.8rem;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color var(--transition-speed), transform 0.2s;
-}
-
-.theme-toggle:hover {
-  background-color: var(--bg-secondary);
-  transform: scale(1.1);
-}
-
-/* ==========================================================================
-   CONTENEDOR PRINCIPAL
-   ========================================================================== */
 .main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
   width: 100%;
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
 }
 
-/* Estilos de transición para el cambio de vistas */
 .view-container {
   width: 100%;
   animation: fadeIn 0.4s ease-in-out;
 }
 
+.view-container {
+  width: 100%;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.main-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.main-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.characters-gallery {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.character-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  width: 280px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-red);
+}
+
+.card-image-container {
+  position: relative;
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.character-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-name-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(15,15,18,1)) 0%, rgba(15, 15, 18, 0.8) 50%, rgba(0,0,0,0) 100%;
+  padding: 1.2rem 1rem 0.8rem 1rem;
+  text-align: center;
+}
+
+.card-name-overlay h2 {
+  font-size: 1.35rem;
+  letter-spacing: 1px;
+  color: var(--text-white);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.card-body {
+  padding: 0 1.2rem 1.2rem 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-role {
+  font-size: 0.75rem;
+  color: var(--accent-red);
+  line-height: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.select-char-btn {
+  background-color: var(--accent-red-trans);
+  border: 1px solid var(--accent-red);
+  color: var(--text-white);
+  padding: 0.8rem 1.2rem;
+  border-radius: 8.px;
+  cursor: pointer;
+  width: 100%;
+  font-family: var(--font-typewriter);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: all 0.2s ease;
+}
+
+.select-char-btn:hover {
+  background-color: var(--accent-red);
+  transform: scale(1.02);
+}
+
+.select-char-btn:active {
+  transform: scale(0.98);
+}
+
+.chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 750px;
+  height: calc(100vh - 160px);
+  min-height: 450%;
+  margin: 0 auto;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-secondary);
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.chat-header-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chat-header.name {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.chat-status {
+  font-size: 0.75rem;
+  color: #4cd964;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-volver {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+  font-family: var(--font-typewriter);
+}
+
+.btn-volver:hover {
+  color: var(--text-white);
+  background-color: var(--bg-secondary);
+  border-color: var(--text-muted);
+  transform: translateX(-3px);
+}
+
+.btn-volver:active {
+  transform: scale(0.95);
+}
+
+.messages-container {
+  flex: 1;
+  background-color: var(--bg-chat-area);
+  overflow: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+ }
+
+ .empty-chat-message {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: auto;
+ }
+
+ .composer-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: var(--bg-secondary);
+  padding: 1rem 1.2rem;
+  border-top: 1px solid var(--border-color);
+ }
+
+ #message-input {
+  flex: 1;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-white);
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  resize: none;
+  font-family: var(--font-typewriter);
+  font-size: 0.9rem;
+  outline: none;
+  transition: var(--border-color) o.3s;
+ }
+
+#message-input:focus {
+  border-color: var(--accent-red);
+}
+
+#send-btn {
+  background-color: var(--accent-red);
+  border: none;
+  columns: var(--text-white);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#send-btn:hover {
+  background-color: var(--accent-red-trans);
+  transform: scale(1.08);
+}
+
+#send-btn:active {
+  transform: scale(0.92);
+}
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
