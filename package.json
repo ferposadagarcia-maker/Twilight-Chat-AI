@@ -1,0 +1,22 @@
+{
+  "name": "chat-bot-twilight",
+  "version": "1.0.0",
+  "description": "SPA para chatear con personajes usando Gemini AI y Vercel Functions",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "local": "vercel dev",
+    "test": "vitest",
+    "test:run": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vercel": "^54.9.1",
+    "vitest": "^4.1.8"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1"
+  }
+}

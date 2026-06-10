@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/assets/:path*", "destination": "/src/assets/:path*" },
+    { "source": "/(styles.css|app.js|characters.js|chat.js|utils.js)", "destination": "/src/$1" },
+    { "source": "/", "destination": "/src/index.html" },
+    { "source": "/home", "destination": "/src/index.html" },
+    { "source": "/chat", "destination": "/src/index.html" },
+    { "source": "/about", "destination": "/src/index.html" }
+  ]
+}
