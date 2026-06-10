@@ -36,7 +36,7 @@ Para este proyecto, se diseñaron tres perfiles de personajes altamente contrast
 ## 🏛️ Estructura del Proyecto (Modularización)
 
 El código sigue estrictamente el patrón de **Separación de Responsabilidades:**
-
+```bash
 CHAT-BOT-TWILIGHT
 ├── api/
 │   └── functions.js         # Backend: Serverless Function (Proxy seguro a Gemini)
@@ -55,7 +55,7 @@ CHAT-BOT-TWILIGHT
 ├── .gitignore               # Configuración de exclusión para Git (Protección de credenciales) 
 ├── package.json             # Gestión de dependencias y scripts de ejecución 
 └── vercel.json              # Controlador de redireccionamiento de rutas de Vercel 
-
+```
 ---
 
 ## 🛠️ Tecnologías Utilizadas
