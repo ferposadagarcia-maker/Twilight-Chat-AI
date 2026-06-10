@@ -164,7 +164,7 @@ git push origin main
 
 ## 🤓 Registro de Uso de la Inteligencia Artifical
 
-Durante el desarrollo de este proyecto se utilizó un enfoque riguroso de ingeniería de prompts (Lectura 5) para interactuar con la IA de asistencia. A continuación se detallan las bitácoras reales de prompts estructurados utilizados para resolver los desafíos lógicos de la aplicación.
+Durante el desarrollo de este proyecto se utilizó un enfoque riguroso de ingeniería de prompts para interactuar con la IA de asistencia. A continuación se detallan las bitácoras reales de prompts estructurados utilizados para resolver los desafíos lógicos de la aplicación.
 
 
  **1. 📝 Diseño de los System Prompts de los personajes**
@@ -180,7 +180,7 @@ Durante el desarrollo de este proyecto se utilizó un enfoque riguroso de ingeni
     - El prompt del sistema debe ser procesado de manera limpia por el SDK sin requerir manipulación de cadenas en el backend.
 - **Evidencia:**
     - *Problema:* Al usar un prompt simple como *"Responde como Edward Cullen"*, Gemini respondía con párrafos gigantescos, usaba palabras sumamente modernas y rompía el rol ante preguntas complejas.
-    - *Payload actual:* El backend usa `gemini-2.5-flash` a través del método `getGenerativeModel`
+    - *Payload actual:* El backend usa `gemini-2.5-flash` a través del método `getGenerativeModel`.
 - **Formato de Salida:**
 Tres bloques de instrucciones de sistema independientes estructurados estrictamente en formato de texto plano con secciones dedicadas a: Perfil, Personalidad, Comportamiento y Ejemplos de Tono.
 - **Criterios de Éxito:**
@@ -218,7 +218,7 @@ Una estructura de archivo vercel.json limpia y explícita, que evite expresiones
 - **Contexto:** Acoplamiento de la interactividad del DOM entre los archivos `app.js` (ruteador que renderiza el HTML) y `chat.js` (cerebro del chat que vincula eventos).
 - **Objetivo:** Diseñar una vinculación a prueba de fallos de escritura (errores de dedo) en los identificadores de la caja de mensajes, previniendo caídas del sistema cuando la pantalla cargue de forma dinámica.
 - **Restricciones:**
-    - No usar librerías de enlace de datos (como React o Vue).
+    - No usar librerías de enlace de datos.
     - No sobrecargar `app.js` con lógica de eventos.
 - **Evidencia:**
     -  *Problema:* Al presionar Enviar, el sistema se congelaba arrojando un error en la consola: `TypeError: Cannot read properties of null (reading 'querySelector')` porque en el HTML se escribió `id="message-area"` (singular) pero en JavaScript se seleccionó como `document.getElementById('messages-area')` (plural).
