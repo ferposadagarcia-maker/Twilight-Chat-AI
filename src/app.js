@@ -5,13 +5,13 @@ function renderHome() {
     const app = document.getElementById('app');
     
     app.innerHTML = `
-        <div class="view-container">
-            <h1 class="font-serif" style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem; letter-spacing: 2px;">BIENVENIDO A TWILIGHT CHAT</h1>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">¿Estás listo para adentrarte en el frio bosque de Washington y conversar con los Cullens y otros personajes de Twilight?</p>
+        <div class="view-container home-view">
+            <h1 class="font-serif">BIENVENIDO A TWILIGHT CHAT</h1>
+            <p class="home-subtitle">¿Estás listo para adentrarte en el frio bosque de Washington y conversar con los Cullens y otros personajes de Twilight?</p>
             
-            <div style="text-align: center; margin-top: 2rem;">
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Esta es la descripción de la aplicación. Aquí puedes elegir con quién quieres hablar:</p>
-                <a href="/chat" class="nav-link" data-link style="border: 1px solid var(--accent-red); padding: 0.8rem 1.5rem; border-radius: 4px; color: var(--text-white); text-decoration: none; text-transform: uppercase; letetr-sapcing: 1px; transition: backgorund 0.3s;">Ir al Chat ->
+            <div class="home-description-container">
+                <p class="home-description">Esta es la descripción de la aplicación. Aquí puedes elegir con quién quieres hablar:</p>
+                <a href="/chat" class="btn-primary" data-link> Ir al Chat →
                 </a>
             </div>
         </div>        
@@ -108,10 +108,11 @@ function renderAbout() {
     const app = document.getElementById('app');
     
     app.innerHTML = `
-        <div class="view-container">
-            <h1 class="font-serif" style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem; letter-spacing: 1px;">Acerca de TwilightChat</h1>
-            <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; text-align: justify;">Twilight Chat es una aplicación de chat interactiva que te permite conversar con los personajes de la saga Twilight mediante una AI. Inspirada en el contraste estético delas portadas de los libros, esta aplicación ofrece una experiencia inmersiva para los fans.</p>
-            <p style="color: var(--text-muted); line-height: 1.8; text-align: justify;">Desarrollado con JavaScript Vanilla, CSS responsivo bajo la filosifia Mobile-First, y conectado de forma segura mediante Serverless Functions de Vercel con la API de Google Gemini.</p>
+        <div class="view-container about-view">
+            <h1 class="font-serif about-title">Acerca de TwilightChat</h1>
+            <p class="about-text">Twilight Chat es una aplicación de chat interactiva que te permite conversar con los personajes de la saga Twilight mediante una AI. Inspirada en el contraste estético delas portadas de los libros, esta aplicación ofrece una experiencia inmersiva para los fans.</p>
+            <p class="about-text">Desarrollado con JavaScript Vanilla, CSS responsivo bajo la filosifia Mobile-First, y conectado de forma segura mediante Serverless Functions de Vercel con la API de Google Gemini.
+            </p>
         </div>
     `;
 }
@@ -120,11 +121,11 @@ function renderNotFound() {
     const app = document.getElementById('app');
     
     app.innerHTML = `
-        <div class="view-container" style="text-align: center; padding: 3rem 0;">
-            <h1 class="font-serif" style="font-size: 3rem; color: var(--accent-red); margin-bottom: 1rem;">404 - Página No Encontrada</h1>
-            <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">¡Vaya! Parece que te has perdido en el bosque de Forks...</h2>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">Incluso con el don de Alice, no pudimos prever esta ruta.</p>
-            <a href="/home" data-link style="border: 1px solid var(--text-white); padding: 0.6rem 1.2rem; color: var(--text-white); text-decoration: none; border-radius: 4px; text-transform: uppercase; font-size: 0.9rem; transition: background 0.3s;">Volver al Inicio</a>
+        <div class="view-container error-view">
+            <h1 class="font-serif error-code">404 - Página No Encontrada</h1>
+            <h2 class="error-title"">¡Vaya! Parece que te has perdido en el bosque de Forks...</h2>
+            <p class="error-description">Incluso con el don de Alice, no pudimos prever esta ruta.</p>
+            <a href="/home" class="btn-secondary" data-link>Volver al Inicio</a>
         </div>
     `;
 }

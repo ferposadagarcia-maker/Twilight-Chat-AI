@@ -31,7 +31,6 @@ body {
   font-weight: bold;
 }
 
-
 .navbar {
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
