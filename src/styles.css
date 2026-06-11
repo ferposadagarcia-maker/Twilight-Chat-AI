@@ -217,7 +217,7 @@ body {
   transition: transform 0.5s ease;
 }
 
-.characters-gallery .character-card:nth-child(2) .card-image {
+.characters-gallery .character-card:nth-child(1) .card-image {
   object-position: center 2%;
 }
 
