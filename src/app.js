@@ -7,10 +7,11 @@ function renderHome() {
     app.innerHTML = `
         <div class="view-container home-view">
             <h1 class="font-serif">BIENVENIDO A TWILIGHT CHAT</h1>
-            <p class="home-subtitle">¿Estás listo para adentrarte en el frio bosque de Washington y conversar con los Cullens y otros personajes de Twilight?</p>
+            <p class="home-subtitle">¿Estás listo para adentrarte en el frio bosque de Forks y conversar con los Cullens y otros personajes de Twilight?</p>
             
             <div class="home-description-container">
-                <p class="home-description">Esta es la descripción de la aplicación. Aquí puedes elegir con quién quieres hablar:</p>
+                <p class="home-description">En ésta aplicación podrás elegir si preguntarle a Edward de su gran amor por Bella, o si eres mas fan de los lobos, pláticar con Jake sobre lo que escucha de la manada, pero si eres un verdadero fan de los Cullen, preguntarle a alice sobre sus visiones.
+                Ahora solo elige con quién quieres hablar:</p>
                 <a href="/chat" class="btn-primary" data-link> Ir al Chat →
                 </a>
             </div>
@@ -43,9 +44,6 @@ function renderChat(){
     app.innerHTML = `
         <div class="view-container">
             <h1 class="font-serif main-title">Elige con quién chatear</h1>
-                 <p class="main-subtitle">Selecciona al personaje con quién quieres pláticar:
-                 </p>
-
                  <div class="characters-gallery">${cardsHTML}
             </div>
         </div>
@@ -110,8 +108,16 @@ function renderAbout() {
     app.innerHTML = `
         <div class="view-container about-view">
             <h1 class="font-serif about-title">Acerca de TwilightChat</h1>
-            <p class="about-text">Twilight Chat es una aplicación de chat interactiva que te permite conversar con los personajes de la saga Twilight mediante una AI. Inspirada en el contraste estético delas portadas de los libros, esta aplicación ofrece una experiencia inmersiva para los fans.</p>
-            <p class="about-text">Desarrollado con JavaScript Vanilla, CSS responsivo bajo la filosifia Mobile-First, y conectado de forma segura mediante Serverless Functions de Vercel con la API de Google Gemini.
+            <p class="about-text">
+                <strong>¿Qué es TwilightChat?</strong><br>
+                Es una Single Page Application (SPA) interactiva diseñada como una Prueba de Concepto (POC) para fanáticos de la literatura y el cine. Su objetivo principal es ofrecer una experiencia inmersiva que permita entablar diálogos fluidos, continuos y naturales con personajes ficticios, respetando con fidelidad sus personalidades originales y arquetipos literarios.
+            </p>
+            <p class="about-text">
+                <strong>¿Qué personajes se eligieron?</strong><br>
+                Para esta demostración, nos adentramos en el universo de Forks de la saga <em>Twilight</em>, permitiendo al usuario elegir entre tres personajes con perfiles psicológicos y de tono muy marcados:
+                <br>• <strong>Edward Cullen</strong>: El vampiro melancólico, poético y sumamente formal.
+                <br>• <strong>Jacob Black</strong>: El hombre lobo impulsivo, directo, cálido e informal.
+                <br>• <strong>Alice Cullen</strong>: La vampiresa alegre, entusiasta y sutilmente vidente.
             </p>
         </div>
     `;
