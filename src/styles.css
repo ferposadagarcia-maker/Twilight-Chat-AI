@@ -57,12 +57,11 @@ body {
 .navbar-links .nav-link:visited {
   color: #8a8f98 !important;
   text-decoration: none !important;
-  font-size: 2.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 0.6rem 1.4rem;  
-  border: 1px solid var(--border-color);
   transition: all 0.2s ease;
   font-family: var(--font-typewriter);
 }
@@ -227,7 +226,7 @@ body {
 }
 
 .characters-gallery .character-card:nth-child(1) .card-image {
-  object-position: center 5%;
+  object-position: center 2%;
 }
 
 .characters-gallery .character-card:nth-child(2) .card-image {
