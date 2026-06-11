@@ -7,7 +7,7 @@ function renderHome() {
     app.innerHTML = `
         <div class="view-container home-view">
             <h1 class="font-serif">BIENVENIDO A TWILIGHT CHAT</h1>
-            <p class="home-subtitle">¿Estás listo para adentrarte en el frio bosque de Forks y conversar con los Cullens y otros personajes de Twilight?</p>
+            <p class="home-subtitle">¿Estás listo para adentrarte en el frío bosque de Forks y conversar con los Cullens y otros personajes de Twilight?</p>
             
             <div class="home-description-container">
                 <p class="home-description">En ésta aplicación podrás elegir si preguntarle a Edward de su gran amor por Bella, o si eres mas fan de los lobos, pláticar con Jake sobre lo que escucha de la manada, pero si eres un verdadero fan de los Cullen, preguntarle a alice sobre sus visiones.
@@ -43,7 +43,7 @@ function renderChat(){
 
     app.innerHTML = `
         <div class="view-container">
-            <h1 class="font-serif main-title">Elige con quién chatear</h1>
+            <h1 class="font-serif main-subtitle">Elige con quién chatear</h1>
                  <div class="characters-gallery">${cardsHTML}
             </div>
         </div>
