@@ -52,17 +52,17 @@ body {
   gap: 1.8rem;
 }
 
-.navbar_links .nav-link {
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-  font-size: 0.95rem;
+.navbar_links .nav-link,
+.navbar-links .nav-link:link,
+.navbar-links .nav-link:visited {
+  color: #8a8f98 !important;
+  text-decoration: none !important;
+  font-size: 2.5rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 0.6rem 1.4rem;  
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background-color: rgba(15, 15, 18, 0.5);
   transition: all 0.2s ease;
   font-family: var(--font-typewriter);
 }
@@ -227,7 +227,7 @@ body {
 }
 
 .characters-gallery .character-card:nth-child(1) .card-image {
-  object-position: center 8%;
+  object-position: center 5%;
 }
 
 .characters-gallery .character-card:nth-child(2) .card-image {
