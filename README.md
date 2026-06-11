@@ -16,6 +16,15 @@ Para este proyecto, se diseñaron tres perfiles de personajes altamente contrast
 
 ## 📸  Capturas de pantalla de la Aplicación
 
+### 1. Pantalla de Bienvenida (Home)
+![Home Page](/src/assets/compu.png)
+
+### 2. Galería de Selección de Personajes (Chat)
+![Galería de Personajes](/src/assets/iphone14pro.gif)
+
+### 3. Sala de Chat Activa con Jacob Black
+![Chat Activo](/src/assets/ipadpro.png)
+
 ---
 
 ## 💡 Tabla de Funcionalidades
