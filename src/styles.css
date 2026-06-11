@@ -19,16 +19,14 @@
 }
 
 body {
-  background-color: var(--bg-primary);
+  background: linear-gradient(rgba(5, 5, 5, 0.88), rgba(5, 5, 5, 0.88)), 
+              url('/assets/bosque 2.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: var(--text-white);
   font-family: var(--font-typewriter);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-.font-serif {
-  font-family: var(--font-typewriter);
-  font-weight: bold;
 }
 
 .navbar {
