@@ -53,21 +53,30 @@ body {
 }
 
 .navbar_links .nav-link {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 0.95rem;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding: 0.4rem 0.6rem;
-  transition: color 0.3s, border-color 0.3s;
-  border-bottom: 2px solid transparent;
-  font-weight: bold;
+  padding: 0.6rem 1.4rem;  
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: rgba(15, 15, 18, 0.5);
+  transition: all 0.2s ease;
+  font-family: var(--font-typewriter);
 }
 
 .navbar-links .navbar-link:hover,
 .navbar-links .nav-link.active {
-  color: var(--text-white);
-  border-bottom: 2px solid var(--accent-red);
+  color: var(--text-white) !important;
+  background-color: var(--accent-red-trans);
+  border-color: var(--accent-red);
+  transform: scale(1.05);
+}
+
+.navbar-links .nav-link:active {
+  transform: scale(0.95);
 }
 
 .home-view {
@@ -215,6 +224,10 @@ body {
   height: 220px;
   object-fit: cover;
   transition: transform 0.5s ease;
+}
+
+.characters-gallery .character-card:nth-child(1) .card-image {
+  object-position: center 8%;
 }
 
 .characters-gallery .character-card:nth-child(2) .card-image {
